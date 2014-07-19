@@ -1,0 +1,74 @@
+class MemTechsController < ApplicationController
+  before_action :set_mem_tech, only: [:show, :edit, :update, :destroy]
+
+  # GET /mem_Techs
+  # GET /mem_Techs.json
+  def index
+    @mem_Techs = MemTech.all
+  end
+
+  # GET /mem_Techs/1
+  # GET /mem_Techs/1.json
+  def show
+  end
+
+  # GET /mem_Techs/new
+  def new
+    @mem_tech = MemTech.new
+  end
+
+  # GET /mem_Techs/1/edit
+  def edit
+  end
+
+  # POST /mem_Techs
+  # POST /mem_Techs.json
+  def create
+    @mem_tech = MemTech.new(mem_tech_params)
+
+    respond_to do |format|
+      if @mem_tech.save
+        format.html { redirect_to @mem_tech, notice: 'Mem tech was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @mem_tech }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @mem_tech.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /mem_Techs/1
+  # PATCH/PUT /mem_Techs/1.json
+  def update
+    respond_to do |format|
+      if @mem_tech.update(mem_tech_params)
+        format.html { redirect_to @mem_tech, notice: 'Mem tech was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @mem_tech.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /mem_Techs/1
+  # DELETE /mem_Techs/1.json
+  def destroy
+    @mem_tech.destroy
+    respond_to do |format|
+      format.html { redirect_to mem_Techs_url }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_mem_tech
+      @mem_tech = MemTech.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def mem_tech_params
+      params.require(:mem_tech).permit(:mem_id, :tech_id)
+    end
+end

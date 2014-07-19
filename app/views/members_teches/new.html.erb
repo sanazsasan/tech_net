@@ -1,0 +1,29 @@
+<%#= link_to 'Back', members_teches_path %>
+<p align=center class="text1">Step 2</p>
+
+<% provide(:title, 'tech_select') %>
+<div align="center" >
+	<h3>Select your Tech field(s)</h3>
+
+		<% @tech=Tech.find(:all) %>
+	    <% @member=Member.find(1)%>
+	    <% @mem_tech=MembersTech.new %>
+	    <%# @mem_tech=MembersTech.find_by member_id:1 %>
+	    
+	    <%= form_for(@mem_tech) do |f| %>
+		    <%= render 'shared/error_messages'%>
+			<div style="text-align: left; height:280px; width:330px" class="inner_box">
+				<ul >
+				  <% @tech.each do |tech| %>
+				      <li>
+				          <%= f.check_box(:tech_id, { :multiple => true }, tech.id, nil) %>
+				        <%= tech.tech_name%>
+				      </li>
+				  <%end%>
+				</ul>
+			</div>	
+			<%= f.hidden_field :member_id, :value => params[:member_id]  %>	    
+		    <%= f.submit "Done", :class => "tech_button3" %> 
+		<%end %>
+
+</div>

@@ -1,0 +1,25 @@
+<%= form_for(@asso_tech) do |f| %>
+  <% if @asso_tech.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@asso_tech.errors.count, "error") %> prohibited this asso_tech from being saved:</h2>
+
+      <ul>
+      <% @asso_tech.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tech_id %><br>
+    <%= f.number_field :tech_id %>
+  </div>
+  <div class="field">
+    <%= f.label :peer_id %><br>
+    <%= f.number_field :peer_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

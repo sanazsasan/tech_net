@@ -1,0 +1,49 @@
+class Member < ActiveRecord::Base
+
+  has_and_belongs_to_many :teches
+  has_many :rates
+  has_many :rated_members, through: :rates, class_name: "Member", foreign_key: :rated_member_id # The members this member has rated
+  has_many :rated_by_members, through: :rates, class_name: "Member", foreign_key: :rater_member_id # The members that have rated this client  
+  before_save { self.email = email.downcase }
+
+  
+  validates :username, presence: true, length: { maximum:50}
+  validates :password, presence: true, length: { maximum:50}
+  validates :name, presence: true, length: { maximum:50}
+  validates :lastname, presence: true, length: { maximum:50}
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, 
+  					format: { with: VALID_EMAIL_REGEX }, 
+  					uniqueness: { case_sensitive: false }
+  has_secure_password
+
+  validates :password, length: { minimum: 4 }
+
+  def Member.new_remember_token
+    SecureRandom.urlsafe_base64
+  end
+
+  def Member.digest(token)
+    Digest::SHA1.hexdigest(token.to_s)
+  end
+
+  private
+
+    def create_remember_token
+      self.remember_token = Member.digest(Member.new_remember_token)
+    end
+
+  def image_file=(incoming_file)
+    self.filename = incoming_file.original_filename
+    self.content_type =incoming_file.content_type.chomp
+    self.data =incoming_file.read
+
+     # give the file path for image
+     directory ="public/upload_images"
+     file_path = File.join(directory,self.filename)
+    # copy the image from the uploaded one to file_path
+     File.open(file_path,'w+b') {|f| f.write(self.data)}
+  end
+
+end

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body class="main_body">
+<p class="title" width="100%">TechNet</p>
+
+<%= yield %>
+
+<p class="footer" width="100%" >Copyright &copy 2014 By: Sara Hashemi & Sasan Azimi</p>
+<p TEXT="#092d07"><%#= debug(params) if Rails.env.development? %></p>
+</body>
+</html>

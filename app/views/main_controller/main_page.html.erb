@@ -1,0 +1,70 @@
+<%#= @notice %>
+<% provide(:title, 'TechNet') %>
+<p>Welcome&nbsp<%= link_to current_member.name , edit_profile_path ,:id => current_member.id, method: "get"  %>
+
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+<%= link_to "logout", logout_path, method: "delete" %></p>
+
+<!--  ############### First Column ##############################################################################!-->
+   <div class="column-left">
+		<p class="inner_title">teches:</p>
+		<div class="inner_box" style="height: 200px">    
+	    	<h3 style="margin-left:20px">Obtainable Technologies (<%= Tech.count %>): </h3>
+				<select size = 8 class = "select_box1">
+				<%Tech.find_each do |tech| %>
+
+					<option id='<%= tech.id %>' onclick= "find_peers(this.id)" <% if (tech.id==params[:selected_tech].to_i) then %><%= "selected" %><%end%> >
+					<%= tech.tech_name %>
+					</option>
+				<%end%>
+				</select>
+		</div>
+		<p class="inner_title" style="padding-top: 7px">Related teches:</p>
+		<div class="inner_box" style="height: 160px">
+	        <h3 style="margin-left:20px">Related Technologies (<%= @relatedtech.count %>): </h3>
+	         <%= render @relatedtech %>
+		</div>
+		<div style="height:70px; align:center; width:300px; vertical-align:middle; text-align: center">
+			<%= image_tag("logo.jpg", :alt => "rss feed", :style => "margin-top:5px") %>
+		</div>
+   </div>
+
+   <!--  ############### Middle Column ##############################################################################!-->
+   <div class="column-center">
+
+   		<div>
+			<p class="inner_title">Search Professionals:</p>
+				<%=form_tag main_page_path , :method => 'get' do %>
+					<%= text_field_tag :member_search_text ,params[:member_search_text] ,:style => "width:194px;height:24px", :placeholder => "username" %>
+					<%= submit_tag 'Search' , :name => nil , :class => "tech_button3" %>
+				<% end %>
+
+		</div>
+        
+
+   	    <div  class="inner_box" style="height: 388px">
+
+   	    	<%if !params[:member_search_text].present? && !params[:selected_tech].present? %>
+				Number of members: <%=@searched_member.count%>
+		    <%end%>
+
+			<%if params[:member_search_text].present?  %>
+				<%  @searched_member.each do |member| %>
+					<li type = "square"><%= link_to member.username , main_page_path(:selected_mem => member.username , :member_search_text => params[:member_search_text]) , :class => "button" %></li>
+				<%end%>
+			<%end%>
+
+			<%if params[:selected_tech].present?  %>
+				 Associated Member(s): <%=@asso_mem.count%>
+				<%  @asso_mem.each do |member| %>
+					<li type = "square"><%= link_to member.username , main_page_path(:selected_mem => member.username , :selected_tech => params[:selected_tech]) , :class => "button" %></li>
+				<%end%>
+			<%end%>
+		</div>
+   </div>
+   <!--  ############### Last Column ##############################################################################!-->
+   <div id="member_div" class="column-right">
+   		<%= render @member %>
+   </div>
+   

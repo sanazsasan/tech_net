@@ -1,0 +1,22 @@
+
+
+		<% if params[:error]=='3' %>
+		<%#=params[:error]	 %>
+		<P class = "alert-error">Please fill the form completely !!</p>
+		<% end %>
+		<%@member=Member.new%>
+
+		<% if @member.errors.any? %>
+			<p>Helllllo</p>
+			<div id = "error explanation">
+				<div class = "alert alert-error">
+					The form contains <%= pluralize(@member.error.count, "error") %>
+				</div>
+				<ul>
+					<% Member.new.errors.full_message.each do |msg| %>
+						<li>* <% msg %> </li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+

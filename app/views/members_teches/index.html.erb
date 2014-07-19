@@ -1,0 +1,26 @@
+<h1>Listing members_teches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Member</th>
+      <th>Tech</th>
+      <th>Integer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @members_teches.each do |members_tech| %>
+      <tr>
+        <td><%members_tech%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Members tech', new_members_tech_path %>

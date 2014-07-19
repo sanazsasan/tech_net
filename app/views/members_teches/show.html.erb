@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Member:</strong>
+  <%= @members_tech.member_id %>
+</p>
+
+<p>
+  <strong>Tech:</strong>
+  <%= @members_tech.tech_id %>
+</p>
+
+<p>
+  <strong>Integer:</strong>
+  <%= @members_tech.integer %>
+</p>
+
+<%= link_to 'Edit', edit_members_tech_path(@members_tech) %> |
+<%= link_to 'Back', members_teches_path %>

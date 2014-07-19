@@ -1,0 +1,43 @@
+<% provide(:title, 'TechNet') %>
+
+<p>Welcome&nbsp<%= link_to current_member.name , edit_profile_path ,:id => current_member.id, method: "get"  %>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<%= link_to "logout", logout_path, method: "delete" %></p>
+
+   <div class="column-left">
+		<p class="inner_title">Techs:</p>
+		<div class="inner_box" style="height: 180px">
+			<%Tech.find_each do |tech| %>
+			<li type = "square"><%= tech.tech_name %></li>
+			<%end%>
+		</div>	
+		<p class="inner_title">Related Techs:</p>
+		<div class="inner_box" style="height: 180px">
+			<%Tech.find_each do |tech| %>
+			<li type = "square"><%=tech.tech_name %></li>
+			<%end%>
+		</div>
+		<div align="center">	
+			<%= button_to  "Find associatied Professionals with selected Tech"  ,  main_page_path , :method =>  :get , :class => "tech_button2" %>
+		</div>
+   </div>
+
+
+   <div class="column-center">
+
+   		<div>
+			<p class="inner_title">Search Professionals:</p>
+			<input type="text"  placeholder="Username"  style="width:195px" maxlength="50" >
+			<%= button_to  "Search"  ,  main_page_path , :method =>  :get , :class => "tech_button3" %>
+		</div>	
+   	    <div  class="inner_box" style="height: 390px">
+			<%Member.find_each do |member| %>
+			<li type = "square"><%=member.name %></li>
+			<%end%>
+		</div>	
+
+
+   </div>
+   
+   <div class="column-right">Column right</div>
+

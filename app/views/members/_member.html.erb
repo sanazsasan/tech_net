@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+<div class="text2">
+
+  <h3 style="margin-left:20px; margin-top:0px; margin-bottom:5px ;color:#ffefde; font-size:20px">Professional profile</h3>
+  <hr>
+  <h3 style="margin-left:20px; margin-top:0px; margin-bottom:2px">Personal information</h3>
+</div>
+
+<div id="div1" class="wrapper" style= "left:5px; top:80px; width:330px; height:250px; overflow: auto">
+  <p style= "margin-left:10px">
+      <strong>Username:</strong>
+      <%= @member.username %>
+  </p>
+  <p style= "margin-left:10px">
+      <strong>Name:</strong>
+      <%= @member.name %>
+  </p>
+  <p style= "margin-left:10px">
+      <strong>Lastname:</strong>
+      <%= @member.lastname %>
+  </p>
+  <p style= "margin-left:10px">
+      <strong>Email:</strong>
+      <%= @member.email %>
+  </p>
+  <p style= "margin-left:10px">
+      <strong>Experiences:</strong>
+      <%= @member.experiences %>
+  </p>
+</div>
+
+<div id="div2" class="wrapper" style= "left:350px; top:79px; width:140px; height:160px; vertical-align:middle; text-align: center" >
+   <% if @member.filename.present? %>
+            <img src=<%= "/upload_images/" + @member.filename %> style ="margin-top:20px" height= "120", width= "120">
+  <% end %>
+</div>
+
+<div id="div3" class="wrapper" style= "left:5px; top:343px; width:330px; height:154px; overflow: auto">
+<% if @member.teches.any? %>
+  <h3 style="margin-left:10px; font-size:12px">Related Fields (<%= @member.teches.count %>): </h3>
+  <ol class="readable_box1">
+    <%= render @teches %>
+  </ol>
+<% end %>    
+</div>
+
+<div class="wrapper" style= "left:350px; top:252px; width:140px; height:246px; vertical-align: middle; text-align:center">
+  <br>
+  <h3 style="padding-top:5px; font-size:12px">Scoring system</h3>
+  <p style="font-size:12px">Members average score:</p>
+  <br>
+  <input class="readable_box2" type="text" name="Score" value='<%= @average%>' readonly size =10px>
+  <%=form_tag main_page_path , :method => 'get' do %>
+    <p>
+      <% if @member.id == @current_member.id %>
+        <%= text_field_tag :rate,@score ,:style => "width:100px;height:24px", :placeholder => "Score: 0-100", :disabled => 'disabled'%>
+      <% else %>
+        <%= number_field_tag 'rating', nil, in: 0...101, :style => "width:100px; height:30px; ", :placeholder => "Score: 0-100"%>
+        <p align="center" background-color:#ffefde><%= submit_tag 'Rate' , :name => nil %></p>
+      <% end %>
+    </p>
+    <input type="hidden" type="number" name="memberid" value= <%= @member.id %> />
+  <% end %>
+</div>  
+<!--/div!-->

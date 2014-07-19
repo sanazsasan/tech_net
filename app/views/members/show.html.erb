@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<div style="margin-left:20px; color:#7e2306">
+  <p>
+    <strong>Username:</strong>
+    <%= @member.username %>
+  </p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @member.name %>
+  </p>
+
+  <p>
+    <strong>Lastname:</strong>
+    <%= @member.lastname %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @member.email %>
+  </p>
+
+  <p>
+    <strong>Experiences:</strong>
+    <%= @member.experiences %>
+  </p>
+</div>
+
+  <div class="text2">
+    <% if @member.teches.any? %>
+      <h3>Related Technology (<%= @member.teches.count %>) (# of fields)</h3>
+      <ol class="">
+        <%= render @teches %>
+      </ol>
+    <% end %>
+  </div>
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

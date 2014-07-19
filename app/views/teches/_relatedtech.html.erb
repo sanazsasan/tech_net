@@ -1,0 +1,12 @@
+
+  <div class="text2">
+    <% if @tech.peers.any? %>
+      <h3 style="margin-left:20px">Related Technologies (<%= @tech.peers.count %>): </h3>
+      <ol class="">
+        <%#= render @teches %>
+        <%  @relatedtech.each do |tech| %>
+				<li type = "square"><%#=  tech.tech_name %></li>
+      </ol>
+    <% end %>
+  </div>
+

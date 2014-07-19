@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tech:</strong>
+  <%= @asso_tech.tech_id %>
+</p>
+
+<p>
+  <strong>Peer:</strong>
+  <%= @asso_tech.peer_id %>
+</p>
+
+<%= link_to 'Edit', edit_asso_tech_path(@asso_tech) %> |
+<%= link_to 'Back', asso_techs_path %>

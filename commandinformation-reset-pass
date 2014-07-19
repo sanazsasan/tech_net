@@ -1,0 +1,7 @@
+$ rails g controller password_resets new
+--------------------------------------------
+$ rails g migration add_password_reset_to_members password_reset_token:string password_reset_sent_at:datetime
+-------------------------------------------
+bundle exec rake db:migrate
+-------------------------------------------
+$ rails g mailer user_mailer password_reset

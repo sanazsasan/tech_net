@@ -1,0 +1,29 @@
+<h1>Listing asso_teches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tech</th>
+      <th>Peer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @asso_teches.each do |asso_tech| %>
+      <tr>
+        <td><%= asso_tech.tech_id %></td>
+        <td><%= asso_tech.peer_id %></td>
+        <td><%= link_to 'Show', asso_tech %></td>
+        <td><%= link_to 'Edit', edit_asso_tech_path(asso_tech) %></td>
+        <td><%= link_to 'Destroy', asso_tech, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Asso tech', new_asso_tech_path %>

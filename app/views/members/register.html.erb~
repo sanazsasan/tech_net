@@ -1,0 +1,64 @@
+<% provide(:title, 'Registration') %>
+<div align="center" >
+	<h1>Registration</h1>
+
+	<table class="form1" border=0>
+		<% @tech=Techs.find(:all) %>
+	    <% @member=Member.new%>
+	    <%= form_for(@member) do |f| %>
+	    <%= render 'shared/error_messages'%>
+		   	<tr>	
+		      <td style="width: 33px"><%= f.label :username %>&nbsp:</td>
+		      <td><%= f.text_field :username %></td>
+			</tr>
+			<tr>
+		      <td><%= f.label :name %>&nbsp:</td>
+		      <td><%= f.text_field :name %></td>
+			</tr>
+
+			<tr>
+		      <td><%= f.label :lastname %>&nbsp:</td>
+		      <td><%= f.text_field :lastname %></td>
+			</tr>
+
+	      	<tr>
+		      <td><%= f.label :email %>&nbsp:</td>
+		      <td><%= f.text_field :email %></td>
+			</tr>
+
+	      	<tr>
+		      <td><%= f.label :password %>&nbsp:</td>
+		      <td><%= f.password_field :password %></td>
+			</tr>
+
+	      	<tr>
+		      <td><%= f.label :password_confirmation, "Confirmation" %>&nbsp:</td>
+		      <td><%= f.password_field :password_confirmation %></td>
+			</tr>
+	      	<tr>
+		      <td>Tech field 1&nbsp:</td>
+		      <td><%= select_tag "tech_name", options_from_collection_for_select(@tech, "id","tech_name") , prompt: "Choose main Tech field" ,:class => "combo1" %></td>
+
+			</tr>
+
+	      	<tr>
+		      <td>Tech field 2&nbsp:</td>
+		      <td><%= select_tag "tech_name", options_from_collection_for_select(@tech, "id","tech_name") , prompt: "Secondry Tech field (optional)",:class => "combo1" %></td>
+			</tr>
+
+	      	<tr>
+		      <td>Tech field 3&nbsp:</td>
+		      <td><%= select_tag "tech_name", options_from_collection_for_select(@tech, "id","tech_name") , prompt: "Third Tech field (optional)" ,:class => "combo1" %></td>
+			</tr>
+
+			<tr>
+		      <td>Experiences&nbsp:</td>
+		      <td><%= f.text_area :experiences ,:size => "31x5" %></td>
+			</tr>
+
+			<tr>
+		      <td colspan=2 align=center><%= f.submit "Create my account", :class => "tech_button3" %></td>
+			</tr>
+	    <% end %> 
+	</table>
+</div>

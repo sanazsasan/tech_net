@@ -1,0 +1,15 @@
+<% provide(:title, 'Reset Password') %>
+<div align="center" >
+<h1>Reset Password</h1>
+<table class="form1" border=0>
+<%= form_tag password_resets_path, :method => :post do %> 
+  <tr>  
+	 <td> <%= label_tag :email %> </td> 
+	 <td><%= text_field_tag :email, params[:email] %> </td>
+  </tr>
+  <tr>
+  <td colspan=2 align=center><%= submit_tag "Reset Password"  %></td>
+</tr>
+<% end %>
+</table>
+</div>

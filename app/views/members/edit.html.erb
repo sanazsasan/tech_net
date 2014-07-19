@@ -1,0 +1,89 @@
+<% provide(:title, 'Edit profile') %>
+<%= link_to "Back to Main page" .html_safe, main_page_path, :id => "button_id", :class => "button4" ,:style => "position:absolute; top:179px; left:25px" %>
+
+<div align="center" >
+	<h3 align="left" style="margin-left: 25px">Edit profile</h3>
+	<% if params[:msg]=='s' %>
+		<%#=params[:error]	 %>
+		<P class="title"  style = "position:absolute; top:90px; left:470px; padding-left:25px; padding-right:25px">Profile updated!</p>
+	<% end %>
+	<% if params[:msg]=='p' %>
+		<%#=params[:error]	 %>
+		<P class="title" style = "position:absolute; top:90px; left:470px; padding-left:25px; padding-right:25px">Please fill the form completely</p>
+		<% end %>
+    <% @member=current_member%>
+    <% @tech=Tech.find(:all) %>
+
+		<div  class="wrapper" style= "left:600px; top:179px; width:140px; height:155px; vertical-align:middle; text-align: center" >
+		   <% if @member.filename.present? %>
+		            <img src=<%= "/upload_images/" + @member.filename %> style ="margin-top:20px" height= "120", width= "120">
+		  <% end %>
+		</div>
+
+    <%= form_for(@member) do |f| %>
+    	<%= render 'shared/error_messages'%>
+		<table class="form1" border=0  style = "position:absolute; top:179px; left:215px">
+		   	<tr>	
+		      <td style="width: 33px"><%= f.label :username %>&nbsp:</td>
+		      <td><%= f.text_field :username %></td>
+			</tr>
+			<tr>
+		      <td><%= f.label :name %>&nbsp:</td>
+		      <td><%= f.text_field :name %></td>
+			</tr>
+
+			<tr>
+		      <td><%= f.label :lastname %>&nbsp:</td>
+		      <td><%= f.text_field :lastname %></td>
+			</tr>
+
+	      	<tr>
+		      <td><%= f.label :email %>&nbsp:</td>
+		      <td><%= f.text_field :email %></td>
+			</tr>
+
+	      	<tr>
+		      <td><%= f.label :password %>&nbsp:</td>
+		      <td><%= f.password_field :password %></td>
+			</tr>
+
+	      	<tr>
+		      <td><%= f.label :password_confirmation, "Confirmation" %>&nbsp:</td>
+		      <td><%= f.password_field :password_confirmation %></td>
+			</tr>
+			<tr>
+		      <td><%= f.label :photo %>&nbsp:</td>
+		      <td><%= f.file_field :image_file %></td>
+			</tr>
+			<tr>
+		      <td>Experiences&nbsp:</td>
+		      <td><%= f.text_area :experiences ,:size => "31x5" %></td>
+			</tr>
+
+			
+            <tr>
+				<td></td>
+            	<td >
+                    <%if @tech.present? %>
+                      	<div class="inner_box" style="padding-left:21px, text-align: left; height:180px; width:330px" >
+							  <% @tech.each do |tech| %>
+							      	<% @mem_tech=MembersTech.where("tech_id =? and member_id =?",tech.id, current_member.id)%>
+							         <% if @mem_tech.present? %>
+							            <%= check_box_tag 'tech_ids[]', tech.id ,:checked=>"true"%>
+							         <% else %>
+							             <%= check_box_tag 'tech_ids[]', tech.id %>
+							         <%end%>
+							        
+							        <%= tech.tech_name%><br>
+							  <%end%>
+						</div>
+					<%end%> 
+				</td> 
+            </tr>
+			<tr>
+			<td></td>
+		      <td><%= f.submit "Update", :class => "tech_button3" %></td>
+			</tr>
+		</table>
+    <% end %> 
+</div>
