@@ -19,6 +19,7 @@ module TechNet
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.secret_key_base = 'fa3b4086388713d1180099a7a382a31e9bf6cd6d944ec4318dbe842cca55ed748b57633e2c082eddc54080fd3e058e0331f0535a1b21ad65b81eb5cf43a5e490'
   end
 end
 
