@@ -1,0 +1,365 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+/* line 8, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+a.button:link {
+  color: blue;
+  font-size: 14px;
+  background: transparent;
+  padding: 5px 5px 5px 5px;
+  text-align: center;
+}
+
+/* line 15, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+a.button:visited {
+  color: blue;
+  background-color: #ffb566;
+}
+
+/* line 19, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+a.button:hover {
+  color: #7e2306;
+  font-weight: bold;
+  background-color: #c86428;
+  text-align: center;
+}
+
+/* line 27, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.wrapper {
+  position: absolute;
+  background-color: #ffc78b;
+  font-family: "Arial","Loma";
+  font-size: 12px;
+  color: #7e2306;
+  border-color: #ffefde;
+  border-width: 3px;
+  border-style: solid;
+  padding: 2px;
+  margin-left: 3px;
+}
+
+/* line 40, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.title {
+  background-color: #c86428;
+  text-align: center;
+  color: #fffcae;
+  font-size: 30px;
+  margin: 0px 0px 0px 0px;
+  height: 35px;
+  padding-top: 17px;
+  font-family: "Impact", "URW Bookman L";
+}
+
+/* line 51, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.alert-error {
+  background-color: #ffefde;
+  text-align: center;
+  color: red;
+  font-size: 14px;
+  margin: 0px 0px 0px 0px;
+  height: 20px;
+  width: 200 px;
+  padding-top: 17px;
+}
+
+/* line 62, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.text1 {
+  text-align: center;
+  color: #ffefde;
+  font-size: 20px;
+}
+
+/* line 68, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.text2 {
+  text-align: left;
+  color: #7e2306;
+  font-size: 14px;
+}
+
+/* line 74, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.form1 {
+  text-align: left;
+  color: #7e2306;
+  font-size: 12px;
+}
+
+/* line 80, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.combo1 {
+  width: 235px;
+  height: 26px;
+  text-align: left;
+  color: #7e2306;
+  font-size: 12px;
+}
+
+/* line 88, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.main_body {
+  color: #ffefde;
+  background-color: #ffb566;
+  font-size: 44px;
+  margin: 0px 0px 0px 0px;
+}
+
+/* line 95, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: #c86428;
+  text-align: center;
+  color: #fffcae;
+  font-size: 12px;
+  margin: 0px 0px 0px 0px;
+  height: 20px;
+  padding-top: 2px;
+  font-family: "Arial", "Loma";
+}
+
+/* line 109, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.debug_dump {
+  color: #000000;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 116, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.button4 {
+  font: normal 14px arial, sans-serif;
+  width: 140px;
+  height: 130px;
+  cursor: pointer;
+  display: block;
+  padding-top: 25px;
+  text-align: center;
+  background-color: #ffc78b;
+  vertical-align: center;
+  border-style: solid;
+  border-color: #ffefde;
+}
+
+/* line 131, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+a.button4:hover {
+  color: #7e2306;
+  background-color: #c86428;
+  cursor: pointer;
+  border-style: ridge;
+}
+
+/* line 138, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.tech_button1 {
+  width: 236px;
+  height: 35px;
+  background-color: transparent;
+}
+
+/* line 145, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.tech_button2 {
+  width: 300px;
+  height: 70px;
+  background-color: technet_gray;
+  white-space: normal;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 10px;
+}
+
+/* line 156, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.tech_button3 {
+  width: 200px;
+  height: 40px;
+  background-color: technet_gray;
+  white-space: normal;
+  margin-top: 8px;
+  margin-bottom: 3px;
+}
+
+/* line 166, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.select_box1 {
+  background: transparent;
+  text-align: left;
+  color: #7e2306;
+  font-size: 12px;
+  margin: 0px 0px 0px 0px;
+  width: 285px;
+  height: 150px;
+  padding-top: 5px;
+  margin-left: 5px;
+  font-family: "Arial", "URW Bookman L";
+}
+
+/* line 179, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.column-left {
+  float: left;
+  width: 300px;
+  height: 500px;
+  border-color: #ffefde;
+  border-width: 3px;
+  border-style: solid;
+  padding: 5px;
+  margin-left: 3px;
+}
+
+/* line 180, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.column-center {
+  float: left;
+  width: 200px;
+  height: 500px;
+  border-color: #ffefde;
+  border-width: 3px;
+  border-style: solid;
+  padding: 5px;
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
+/* line 181, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.column-right {
+  position: absolute;
+  left: 539px;
+  width: 500px;
+  height: 500px;
+  border-color: #ffefde;
+  border-width: 3px;
+  border-style: solid;
+  padding: 5px;
+  margin-left: 3px;
+}
+
+/* line 183, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.inner_box {
+  background-color: #ffc78b;
+  font-family: "Arial","Loma";
+  font-size: 12px;
+  color: #7e2306;
+  overflow: auto;
+  border-color: #ffefde;
+  border-width: 3px;
+  border-style: solid;
+  padding: 2px;
+}
+
+/* line 194, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.inner_title {
+  background-color: #ffb566;
+  font-family: "Arial","Loma";
+  font-size: 13px;
+  color: #7e2306;
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* line 204, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.readable_box1 {
+  background: transparent;
+  text-align: left;
+  color: #7e2306;
+  font-size: 12px;
+  margin: 0px 0px 0px 0px;
+  width: 290px;
+  height: 22px;
+  font-family: "Impact", "URW Bookman L";
+}
+
+/* line 214, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/main_controller.css.scss */
+.readable_box2 {
+  background: transparent;
+  text-align: center;
+  color: #7e2306;
+  font-size: 12px;
+  margin: 0px 0px 0px 0px;
+  width: 70px;
+  height: 22px;
+  font-family: "Impact", "URW Bookman L";
+}
+/* line 1, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/scaffolds.css.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 9, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/scaffolds.css.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 15, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/scaffolds.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 21, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/scaffolds.css.scss */
+a {
+  color: #000;
+}
+/* line 23, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/scaffolds.css.scss */
+a:visited {
+  color: #666;
+}
+/* line 26, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/scaffolds.css.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 33, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/scaffolds.css.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 38, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/scaffolds.css.scss */
+#notice {
+  color: green;
+}
+
+/* line 42, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/scaffolds.css.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 48, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 55, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 65, /home/sasan/rails_projects/tech_net/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
