@@ -43,7 +43,7 @@ if w.present?
    respond_to do |format|
       if @members_tech.save
           format.html do
-              redirect_to main_page_path 
+           return redirect_to main_page_path 
               #, notice:  m
           end
       else
@@ -54,7 +54,7 @@ if w.present?
     end
   end
 else
-   redirect_to main_page_path 
+   return redirect_to main_page_path 
    # , notice:  m
 
 end    

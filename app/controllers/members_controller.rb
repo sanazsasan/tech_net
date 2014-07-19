@@ -71,7 +71,8 @@ class MembersController < ApplicationController
 
       else
         if @mem_tech.present?
-               MembersTech.delete_all("member_id =?",current_member.id)
+               MembersTech.where(:member_id => current_member.id).delete_all
+                #.delete_all("member_id =?",current_member.id)
           end 
             
           # if mem_tech_ids.present?
